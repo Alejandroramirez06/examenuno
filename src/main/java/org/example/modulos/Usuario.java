@@ -1,5 +1,7 @@
 package org.example.modulos;
 
+import org.example.validacion.UsuarioValidacion;
+
 public class Usuario {
     private Integer id;
     private String documento;
@@ -16,7 +18,10 @@ public class Usuario {
         this.nombres = nombres;
         this.correoElectronico = correoelectronico;
         this.ubicacion = ubicacion;
+
     }
+    private UsuarioValidacion validacion= new UsuarioValidacion();
+
 
     public Integer getId() {
         return id;
@@ -39,7 +44,12 @@ public class Usuario {
     }
 
     public void setNombres(String nombres) {
-        this.nombres = nombres;
+        try{
+            this.validacion.validarNombre(nombres);
+            this.nombres= nombres;
+        }catch (Exception error){
+            System.out.println(error.getMessage());
+        }
     }
 
     public String getCorreoElectronico() {
