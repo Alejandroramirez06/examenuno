@@ -79,4 +79,17 @@ public class Oferta {
     public void setIdLocal(Integer idLocal) {
         this.idLocal = idLocal;
     }
+
+    @Override
+    public String toString() {
+        return "Oferta{" +
+                "id=" + id +
+                ", titulo='" + titulo + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", fechaInicio=" + fechaInicio +
+                ", fechaFin=" + fechaFin +
+                ", costoPersona=" + costoPersona +
+                ", idLocal=" + idLocal +
+                '}';
+    }
 }
